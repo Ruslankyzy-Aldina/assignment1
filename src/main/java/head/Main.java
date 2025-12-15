@@ -6,55 +6,54 @@ import head.professor.professor;
 public class Main {
     public static void main(String[] args){
         courses course1=new courses();
-        course1.subject = "Introduction to Programming";
-        course1.credits = 5;
-        course1.time = 2;
+        course1.setSubject("Introduction to Programming");
+        course1.setCredits(5);
+        course1.setTime(2);
         courses course2 = new courses();
-        course2.subject = "Object-oriented programming";
-        course2.credits = 5;
-        course2.time = 5;
+        course2.setSubject("Object-oriented programming");
+        course2.setCredits(5);
+        course2.setTime(5);
 
         String course1Info = course1.program();
         String course2Info = course2.program();
         System.out.println(course1Info);
         System.out.println(course2Info);
-        if (course1.time < course2.time) {
-            System.out.println(course1.subject +" < "+ course2.subject);
+        if (course1.getTime() < course2.getTime()) {
+            System.out.println(course1.getSubject() +" < "+ course2.getSubject());
         }
         else{
-            System.out.println(course1.subject +" > "+ course2.subject);
+            System.out.println(course1.getSubject() +" > "+ course2.getSubject());
         }
 
-        professor professor1 = new professor("Ayim Nurbolkyzy", 5);
-        String professor1Fullname = professor1.getfullname();
-        int professor1Experience = professor1.getExperience();
-
+        professor professor1 = new professor();
+        professor1.setFullname("Ayim Nurbolkyzy");
+        professor1.setExperience(5);
         professor professor2 = new professor();
-        professor2.fullname = "Kiril Trimakov";
-        professor2.experience = 2;
+        professor2.setFullname("Kiril Trimakov");
+        professor2.setExperience(2);
         String professor1Info = professor1.teacher();
         String professor2Info = professor2.teacher();
         System.out.println(professor1Info);
         System.out.println(professor2Info);
-        if(professor1.experience > professor2.experience ){
-            System.out.println(professor1.fullname + " has more experience");
+        if(professor1.getExperience() > professor2.getExperience() ){
+            System.out.println(professor1.getFullname() + " has more experience");
         }
         Uni Uniname1 = new Uni();
-        Uniname1.name = "Astana IT University";
-        Uniname1.city = "Astana";
-        Uniname1.years = 6;
+        Uniname1.setName("Astana IT University");
+        Uniname1.setCity("Astana");
+        Uniname1.setYears(6);
 
         Uni Uniname2 = new Uni();
-        Uniname2.name = "KBTU";
-        Uniname2.city = "Almaty";
-        Uniname2.years = 24;
+        Uniname2.setName("KBTU");
+        Uniname2.setCity("Almaty");
+        Uniname2.setYears(24);
         String Uni1Info = Uniname1.print();
         String Uni2Info = Uniname2.print();
         System.out.println(Uni1Info);
         System.out.println(Uni2Info);
 
-        if(Uniname1.city == "Astana"){
-            System.out.println("It is good university: "+ Uniname1.name);
+        if(Uniname1.getCity() == "Astana"){
+            System.out.println("It is good university: "+ Uniname1.getName());
         }
     }
 
